@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/main.css'%}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <main>
+          <div id="authorization" class="form-group">
+            <div id="text">
+              <p>Please, sign in</p>
+            </div>
+            <div id="username">
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+                id="exampleInputUsername"
+                aria-describedby="UsernameHelp"
+                placeholder="Username"
+                size="25"
+              />
+            </div>
+            <div id="password" class="form-group">
+              <input
+                name="password"
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+                size="25"
+              />
+            </div>
+            {% for message in messages %}
+            <div id="textt" class="message {{ message.tags }}">
+              <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+            <button id="button" type="submit">sign in</button>
+          </div>
+        </main>
+      </form>
+    </div>
+  </body>
+</html>

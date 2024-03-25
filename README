@@ -1,0 +1,12 @@
+запуск django проекта
+python manage.py runserver 
+
+миграция 
+python manage.py migrate
+
+создание пользователя
+python manage.py createsuperuser
+
+установка гита
+brew install git
+
