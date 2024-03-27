@@ -1,5 +1,6 @@
 запуск django проекта
 python manage.py runserver 
+python manage.py runserver 0.0.0.0:8000
 
 миграция 
 python manage.py migrate
