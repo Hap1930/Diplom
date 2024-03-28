@@ -4,6 +4,7 @@ python manage.py runserver 0.0.0.0:8000
 
 миграция 
 python manage.py migrate
+python manage.py makemigrations proj
 
 создание пользователя
 python manage.py createsuperuser

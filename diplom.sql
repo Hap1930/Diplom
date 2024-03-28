@@ -149,6 +149,7 @@ CREATE TABLE IF NOT EXISTS ComputerSoftware (
 
 
 
+
 CREATE TABLE IF NOT EXISTS IncidentHistory (
     IncidentID INT AUTO_INCREMENT,
     EquipmentType ENUM('Компьютер', 'Монитор', 'Принтер'), -- Добавляем ENUM для типа оборудования
@@ -157,5 +158,7 @@ CREATE TABLE IF NOT EXISTS IncidentHistory (
     Description TEXT,
     PRIMARY KEY (IncidentID)
 );
+
+
 
 
