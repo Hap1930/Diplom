@@ -91,8 +91,14 @@ class Harddrives(models.Model):
 
 
 class Incidenthistory(models.Model):
+    
+    AUTHOR_CHOICES = [
+       ('Компьютер', 'Компьютер'),
+       ('Монитор', 'Монитор'),
+       ('Принтер', 'Принтер'),
+   ]
     incidentid = models.AutoField(db_column='IncidentID', primary_key=True, blank=True, null=True)  # Field name made lowercase.
-    equipmenttype = models.CharField(db_column='EquipmentType', max_length=9, blank=True, null=True)  # Field name made lowercase.
+    equipmenttype = models.TextChoices(db_column='EquipmentType', max_length=9, blank=True, null=True)  # Field name made lowercase.
     serialnumber = models.CharField(db_column='SerialNumber', max_length=13)  # Field name made lowercase.
     incidentdate = models.DateTimeField(db_column='IncidentDate', blank=True, null=True)  # Field name made lowercase.
     description = models.TextField(db_column='Description', blank=True, null=True)  # Field name made lowercase.
