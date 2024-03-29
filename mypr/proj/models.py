@@ -20,14 +20,14 @@ class Computersoftware(models.Model):
 
 
 class Computers(models.Model):
-    computerid = models.IntegerField(db_column='ComputerID', unique=True)  # Field name made lowercase.
+    computerid = models.IntegerField(db_column='ComputerID', unique=True,  blank=True, null=True)  # Field name made lowercase.
     serialnumber = models.CharField(db_column='SerialNumber', primary_key=True, max_length=13)  # Field name made lowercase.
     inventory_number = models.IntegerField(db_column='Inventory_number', unique=True)  # Field name made lowercase.
     model = models.CharField(db_column='Model', max_length=120)  # Field name made lowercase.
     employeeid = models.ForeignKey('Employees', models.DO_NOTHING, db_column='EmployeeID')  # Field name made lowercase.
     ip_adress = models.CharField(db_column='IP_adress', max_length=19, blank=True, null=True)  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
-    status = models.IntegerField(db_column='Status', blank=True, null=True)  # Field name made lowercase.
+    status = models.BooleanField(db_column='Status',  default = True)  # Field name made lowercase.
     model_processors = models.ForeignKey('Processors', models.DO_NOTHING, db_column='Model_processors')  # Field name made lowercase.
     model_motherboards = models.ForeignKey('Motherboards', models.DO_NOTHING, db_column='Model_motherboards')  # Field name made lowercase.
     model_ram = models.ForeignKey('Rams', models.DO_NOTHING, db_column='Model_ram')  # Field name made lowercase.
@@ -43,7 +43,7 @@ class Computers(models.Model):
 
 
 class Departments(models.Model):
-    departmentid = models.AutoField(db_column='DepartmentID', primary_key=True)  # Field name made lowercase.
+    departmentid = models.IntegerField(db_column='DepartmentID', primary_key=True, blank=True, null=True)  # Field name made lowercase.
     departmentname = models.CharField(db_column='DepartmentName', max_length=100)  # Field name made lowercase.
 
     class Meta:
@@ -52,7 +52,7 @@ class Departments(models.Model):
 
 
 class Employees(models.Model):
-    employeeid = models.AutoField(db_column='EmployeeID', primary_key=True)  # Field name made lowercase.
+    employeeid = models.AutoField(db_column='EmployeeID', primary_key=True, blank=True, null=True)  # Field name made lowercase.
     firstname = models.CharField(db_column='FirstName', max_length=50)  # Field name made lowercase.
     lastname = models.CharField(db_column='LastName', max_length=50)  # Field name made lowercase.
     departmentid = models.ForeignKey(Departments, models.DO_NOTHING, db_column='DepartmentID')  # Field name made lowercase.
@@ -91,7 +91,7 @@ class Harddrives(models.Model):
 
 
 class Incidenthistory(models.Model):
-    incidentid = models.AutoField(db_column='IncidentID', primary_key=True)  # Field name made lowercase.
+    incidentid = models.AutoField(db_column='IncidentID', primary_key=True, blank=True, null=True)  # Field name made lowercase.
     equipmenttype = models.CharField(db_column='EquipmentType', max_length=9, blank=True, null=True)  # Field name made lowercase.
     serialnumber = models.CharField(db_column='SerialNumber', max_length=13)  # Field name made lowercase.
     incidentdate = models.DateTimeField(db_column='IncidentDate', blank=True, null=True)  # Field name made lowercase.
@@ -103,11 +103,11 @@ class Incidenthistory(models.Model):
 
 
 class Monitors(models.Model):
-    monitorid = models.IntegerField(db_column='MonitorID', unique=True)  # Field name made lowercase.
-    model = models.CharField(db_column='Model', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    monitorid = models.IntegerField(db_column='MonitorID', unique=True, blank=True, null=True)  # Field name made lowercase.
+    model = models.CharField(db_column='Model', max_length=50)  # Field name made lowercase.
     serialnumber = models.CharField(db_column='SerialNumber', primary_key=True, max_length=13)  # Field name made lowercase.
     inventory_number = models.IntegerField(db_column='Inventory_number', unique=True)  # Field name made lowercase.
-    status = models.IntegerField(db_column='Status', blank=True, null=True)  # Field name made lowercase.
+    status = models.BooleanField(db_column='Status', default = True)  # Field name made lowercase.
     employeeid = models.ForeignKey(Employees, models.DO_NOTHING, db_column='EmployeeID')  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
     screen = models.CharField(db_column='Screen', max_length=200)  # Field name made lowercase.
@@ -146,11 +146,11 @@ class Powersupplies(models.Model):
 
 
 class Printers(models.Model):
-    printerid = models.IntegerField(db_column='PrinterID', unique=True)  # Field name made lowercase.
+    printerid = models.IntegerField(db_column='PrinterID', unique=True,  blank=True, null=True)  # Field name made lowercase.
     model = models.CharField(db_column='Model', max_length=120)  # Field name made lowercase.
     serialnumber = models.CharField(db_column='SerialNumber', primary_key=True, max_length=50)  # Field name made lowercase.
     inventory_number = models.IntegerField(db_column='Inventory_number', unique=True)  # Field name made lowercase.
-    status = models.IntegerField(db_column='Status', blank=True, null=True)  # Field name made lowercase.
+    status = models.BooleanField(db_column='Status', default = True)  # Field name made lowercase.
     employeeid = models.ForeignKey(Employees, models.DO_NOTHING, db_column='EmployeeID')  # Field name made lowercase.
     ip_adress = models.CharField(db_column='IP_adress', max_length=19, blank=True, null=True)  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
@@ -182,7 +182,7 @@ class Rams(models.Model):
 
 
 class Software(models.Model):
-    softwareid = models.IntegerField(db_column='SoftwareID', unique=True)  # Field name made lowercase.
+    softwareid = models.IntegerField(db_column='SoftwareID', unique=True,  blank=True, null=True)  # Field name made lowercase.
     name = models.CharField(db_column='Name', primary_key=True, max_length=100)  # Field name made lowercase.
     version = models.CharField(db_column='Version', max_length=50)  # Field name made lowercase.
     licensekey = models.CharField(db_column='LicenseKey', max_length=50)  # Field name made lowercase.
