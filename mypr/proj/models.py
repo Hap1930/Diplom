@@ -205,7 +205,7 @@ class Monitors(models.Model):
     # monitorid = models.IntegerField(db_column='MonitorID', unique=True, blank=True, null=True)  # Field name made lowercase.
     model = models.CharField(db_column='Model', max_length=50)  # Field name made lowercase.
     serialnumber = models.CharField(db_column='SerialNumber', primary_key=True, max_length=13)  # Field name made lowercase.
-    inventory_number = models.CharField(db_column='Inventory_number',max_length=10)  # Field name made lowercase.
+    inventory_number = models.CharField(db_column='Inventory_number',max_length=10, unique = True)  # Field name made lowercase.
     status = models.BooleanField(db_column='Status', default = True)  # Field name made lowercase.
     employeeid = models.ForeignKey(Employees, on_delete=models.CASCADE, db_column='EmployeeID')  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
