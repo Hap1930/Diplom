@@ -56,6 +56,7 @@ class Processors(models.Model):
     clock_rate = models.DecimalField(db_column='Clock_rate', max_digits=2, decimal_places=1, blank=True, null=True)  # Field name made lowercase.
 
 
+
     def __str__(self):
         return f'{self.model_processors}'
 
