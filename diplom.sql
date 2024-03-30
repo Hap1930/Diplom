@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS IT_Inventory;
-USE IT_Inventory;
+-- CREATE DATABASE IF NOT EXISTS IT_Inventory;
+-- USE IT_Inventory;
 
 CREATE TABLE IF NOT EXISTS Departments (
     DepartmentID INT AUTO_INCREMENT,
@@ -147,9 +147,6 @@ CREATE TABLE IF NOT EXISTS ComputerSoftware (
     FOREIGN KEY (Name) REFERENCES Software(Name)
 );
 
-
-
-
 CREATE TABLE IF NOT EXISTS IncidentHistory (
     IncidentID INT AUTO_INCREMENT,
     EquipmentType ENUM('Компьютер', 'Монитор', 'Принтер'), -- Добавляем ENUM для типа оборудования
@@ -158,6 +155,63 @@ CREATE TABLE IF NOT EXISTS IncidentHistory (
     Description TEXT,
     PRIMARY KEY (IncidentID)
 );
+
+
+CREATE TABLE IF NOT EXISTS History_Computers (
+	History_id INT AUTO_INCREMENT,
+    Type_command ENUM('Удаление', 'Изменение'),
+    Command_time DATETIME default(current_time()), 
+    ComputerID INT,
+    SerialNumber VARCHAR(13) NOT NULL,
+    Inventory_number INT  UNIQUE NOT NULL,
+    Model VARCHAR(120) NOT NULL,
+    EmployeeID INT NOT NULL,
+    IP_adress VARCHAR(19),
+    Datу_use DATE NOT NULL default(curdate()),
+	Status BOOLEAN DEFAULT(TRUE),
+    Model_processors VARCHAR(120) NOT NULL,
+	Model_motherboards VARCHAR(120) NOT NULL,
+    Model_ram VARCHAR(120) NOT NULL,
+    Quantity INT NOT NULL,
+    Model_HardDrives VARCHAR(120) NOT NULL,
+    Second_Model_HardDrives VARCHAR(120) NOT NULL,
+    Model_PowerSupplies VARCHAR(120) NOT NULL,
+    Model_GraphicsCards VARCHAR(120) NOT NULL,
+    PRIMARY KEY (History_id)
+);
+
+CREATE TABLE IF NOT EXISTS History_Monitors (
+    History_id INT AUTO_INCREMENT,
+    Type_command ENUM('Удаление', 'Изменение'),
+    Command_time DATETIME default(current_time()), 
+    MonitorID INT ,
+    Model VARCHAR(50),
+    SerialNumber VARCHAR(13) NOT NULL,
+    Inventory_number INT  UNIQUE NOT NULL,
+    Status BOOLEAN DEFAULT(TRUE),
+    EmployeeID INT NOT NULL,
+    Datу_use DATE NOT NULL default(curdate()),
+    Screen VARCHAR(200) NOT NULL,
+    Connectors VARCHAR(450) NOT NULL,
+    PRIMARY KEY (History_id)
+);
+
+CREATE TABLE IF NOT EXISTS History_Printers (
+    History_id INT AUTO_INCREMENT,
+    Type_command ENUM('Удаление', 'Изменение'),
+    Command_time DATETIME default(current_time()), 
+    PrinterID INT  ,
+    Model VARCHAR(120) NOT NULL,
+    SerialNumber VARCHAR(50) NOT NULL,
+    Inventory_number INT  UNIQUE NOT NULL,
+    Status BOOLEAN DEFAULT(TRUE),
+    EmployeeID INT NOT NULL,
+    IP_adress VARCHAR(19),
+	Datу_use DATE NOT NULL default(curdate()),
+    Connectors VARCHAR(450) NOT NULL,
+    PRIMARY KEY (History_id)
+);
+
 
 
 

@@ -78,7 +78,7 @@ WSGI_APPLICATION = "mypr.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "djangoo",
+        "NAME": "django",
         "USER": "root",
         "PASSWORD": "1",
         "HOST": "127.0.0.1",

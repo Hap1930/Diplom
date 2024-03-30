@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from proj.models import *
-admin.site.register(Computersoftware)
+""" admin.site.register(Computersoftware)
 admin.site.register(Computers)
 admin.site.register(Departments)
 admin.site.register(Employees)
@@ -14,4 +14,4 @@ admin.site.register(Powersupplies)
 admin.site.register(Printers)
 admin.site.register(Processors)
 admin.site.register(Rams)
-admin.site.register(Software)
+admin.site.register(Software) """
