@@ -2,8 +2,8 @@ DELIMITER //
 CREATE TRIGGER computer_Trigger_update
 AFTER UPDATE ON django.Computers FOR EACH ROW
 BEGIN
-INSERT INTO  `HISTORY`.`History_Computers` (`Type_command`, `SerialNumber`, `Inventory_number`, `Model`, `EmployeeID`, `IP_adress`, `Datу_use`, `Status`, `Model_processors`, `Model_motherboards`, `Model_ram`, `Quantity`, `Model_HardDrives`, `Second_Model_HardDrives`, `Model_PowerSupplies`) 
-VALUES ('Изменение', old.SerialNumber, old.Inventory_number, old.Model , old.EmployeeID , old.IP_adress, old.Datу_use, old.Status, old.Model_processors , old.Model_motherboards, old.Model_ram, old.Quantity, old.Model_HardDrives, old.Second_Model_HardDrives, old.Model_PowerSupplies);
+INSERT INTO  `HISTORY`.`History_Computers` (`Type_command`, `SerialNumber`, `Inventory_number`, `Model`, `IP_adress`, `Datу_use`, `Status`, `Quantity`, `EmployeeID`, `Model_GraphicsCards`, `Model_HardDrives`, `Second_Model_HardDrives`, `Model_motherboards`, `Model_PowerSupplies`, `Model_processors`, `Model_ram`) 
+VALUES ('Изменение', old.SerialNumber, old.Inventory_number, old.Model ,  old.IP_adress, old.Datу_use, old.Status, old.Quantity, old.EmployeeID, old.Model_GraphicsCards, old.Model_HardDrives, old.Second_Model_HardDrives, old.Model_motherboards,  old.Model_PowerSupplies, old.Model_processors, old.Model_ram);
 END; //
 DELIMITER ;
 
@@ -11,8 +11,8 @@ DELIMITER //
 CREATE TRIGGER computer_Trigger_delete
 AFTER DELETE ON django.Computers FOR EACH ROW
 BEGIN
-INSERT INTO  `HISTORY`.`History_Computers` (`Type_command`, `SerialNumber`, `Inventory_number`, `Model`, `EmployeeID`, `IP_adress`, `Datу_use`, `Status`, `Model_processors`, `Model_motherboards`, `Model_ram`, `Quantity`, `Model_HardDrives`, `Second_Model_HardDrives`, `Model_PowerSupplies`) 
-VALUES ('Удаление', old.SerialNumber, old.Inventory_number, old.Model , old.EmployeeID , old.IP_adress, old.Datу_use, old.Status, old.Model_processors , old.Model_motherboards, old.Model_ram, old.Quantity, old.Model_HardDrives, old.Second_Model_HardDrives, old.Model_PowerSupplies);
+INSERT INTO  `HISTORY`.`History_Computers` (`Type_command`, `SerialNumber`, `Inventory_number`, `Model`, `IP_adress`, `Datу_use`, `Status`, `Quantity`, `EmployeeID`, `Model_GraphicsCards`, `Model_HardDrives`, `Second_Model_HardDrives`, `Model_motherboards`, `Model_PowerSupplies`, `Model_processors`, `Model_ram`) 
+VALUES ('Удаление', old.SerialNumber, old.Inventory_number, old.Model ,  old.IP_adress, old.Datу_use, old.Status, old.Quantity, old.EmployeeID, old.Model_GraphicsCards, old.Model_HardDrives, old.Second_Model_HardDrives, old.Model_motherboards,  old.Model_PowerSupplies, old.Model_processors, old.Model_ram);
 
 END; //
 DELIMITER ;
