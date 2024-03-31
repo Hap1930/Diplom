@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="`Computers_Model_ram_d85d6420_fk_RAMs_Model_ram`" directorySegmentName="seg_0" id="8428DEF6-9E3B-6FD3-15BD-14C13A622F8C">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>F0DF0815-CF07-0E63-3782-DF5821AC5404</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<sourcePk>3F0BE2CA-E0DC-7BAF-DAAF-7DF87FF2CE5F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E10A44AD-13C6-E82C-6751-798C24293106</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8AEACE45-6A46-7365-CBC7-680F963CD9D5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

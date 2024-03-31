@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E2A1007F-2F6E-C615-3F48-16808D622DD2" containerWithKeyObject="9FF198C7-E501-DCAB-50D0-555FC690D164" localFKIndex="0A29F947-F4BF-0338-EF79-158A7FCB6E34" name="`Computers`_`HardDrives`_FK">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>A1509AF3-B464-7205-209E-5A841C5ACC6C</importedID>
+<referredTableLongName>`HardDrives`</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6A3CB52D-8695-CF50-62AF-F718BDBEE41E</referredTableID>
+<keyObject>11C34715-3192-A5B4-8589-327A148260AE</keyObject>
+<referredKeyID>11C34715-3192-A5B4-8589-327A148260AE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>`Model_HardDrives`</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

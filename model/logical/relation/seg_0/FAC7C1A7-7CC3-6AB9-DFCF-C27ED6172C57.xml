@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="`Computers_Model_GraphicsCards_b2c235aa_fk_GraphicsC`" directorySegmentName="seg_0" id="FAC7C1A7-7CC3-6AB9-DFCF-C27ED6172C57">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>8F3E7256-B221-2D37-F6BE-EC2F981B1AC9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<sourcePk>3DC566D9-BBDA-B4A0-BCA0-7256F1B897B4</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>25D708BE-3F84-DB7E-1B01-87A8A1EBE59C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8AEACE45-6A46-7365-CBC7-680F963CD9D5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

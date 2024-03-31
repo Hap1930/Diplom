@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="`Computers_Model_motherboards_120c7c97_fk_Motherboa`" directorySegmentName="seg_0" id="C5C0D612-AC0C-B620-9C64-7F2F301F1D3A">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>94703928-6DBC-2F95-DE40-CF1FF9900A6D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<sourcePk>D64519CC-C809-A47D-A72B-2C70C3218433</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E876E8DF-460D-96C5-1A5A-D37E2C81C7C8</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8AEACE45-6A46-7365-CBC7-680F963CD9D5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

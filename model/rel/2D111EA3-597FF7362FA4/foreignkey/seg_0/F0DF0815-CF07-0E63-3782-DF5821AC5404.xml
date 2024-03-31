@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F0DF0815-CF07-0E63-3782-DF5821AC5404" containerWithKeyObject="9FF198C7-E501-DCAB-50D0-555FC690D164" localFKIndex="9EB3DDA7-699C-54BF-42D9-DC390184C517" name="`Computers`_`RAMs`_FK">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>8FE16C85-C814-FDE1-8EE1-E478BCB4A1E8</importedID>
+<referredTableLongName>`RAMs`</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>513A7CDA-0035-55D7-4431-51FE393F11F2</referredTableID>
+<keyObject>B8530E17-7C61-A776-D42F-14443D046886</keyObject>
+<referredKeyID>B8530E17-7C61-A776-D42F-14443D046886</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>`Model_ram`</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
