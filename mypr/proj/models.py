@@ -176,7 +176,7 @@ class Computers(models.Model):
     model_ram = models.ForeignKey(Rams,  models.CASCADE, db_column='Model_ram')  # Field name made lowercase.
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
     model_harddrives = models.ForeignKey(Harddrives, on_delete=models.CASCADE, db_column='Model_HardDrives')  # Field name made lowercase.
-    second_model_harddrives = models.ForeignKey(Harddrives, on_delete=models.CASCADE, db_column='Second_Model_HardDrives', related_name='computers_second_model_harddrives_set')  # Field name made lowercase.
+    second_model_harddrives = models.ForeignKey(Harddrives, on_delete=models.CASCADE, blank=True, null=True, db_column='Second_Model_HardDrives', related_name='computers_second_model_harddrives_set')  # Field name made lowercase.
     model_powersupplies = models.ForeignKey(Powersupplies, on_delete=models.CASCADE,  db_column='Model_PowerSupplies')  # Field name made lowercase.
     model_graphicscards = models.ForeignKey(Graphicscards, on_delete=models.CASCADE, db_column='Model_GraphicsCards')  # Field name made lowercase.
 
