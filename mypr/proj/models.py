@@ -16,7 +16,8 @@ class Departments(models.Model):
         db_table = 'Departments'
 
 class Motherboards(models.Model):
-    model_motherboards = models.CharField(db_column='Model_motherboards', primary_key=True, max_length=120)  # Field name made lowercase.
+    motherboards_id = models.AutoField(db_column='Motherboards_id',  primary_key=True, blank=True)
+    model_motherboards = models.CharField(db_column='Model_motherboards', unique=True, max_length=120)  # Field name made lowercase.
     chipset = models.CharField(db_column='Chipset', max_length=30)  # Field name made lowercase.
     form_factor = models.CharField(db_column='Form_factor', max_length=20)  # Field name made lowercase.
     socket = models.CharField(db_column='Socket', max_length=20)  # Field name made lowercase.
@@ -36,7 +37,8 @@ class Motherboards(models.Model):
 
 
 class Graphicscards(models.Model):
-    model_graphicscards = models.CharField(db_column='Model_GraphicsCards', primary_key=True, max_length=120)  # Field name made lowercase.
+    graphicscards_id = models.AutoField(db_column='Graphicscards_id',  primary_key=True, blank=True)
+    model_graphicscards = models.CharField(db_column='Model_GraphicsCards', unique=True, max_length=120)  # Field name made lowercase.
     video_memory = models.IntegerField(db_column='Video_memory')  # Field name made lowercase.
     type_memory = models.CharField(db_column='Type_memory', max_length=30)  # Field name made lowercase.
     connectors = models.CharField(db_column='Connectors', max_length=450)  # Field name made lowercase.
@@ -51,7 +53,8 @@ class Graphicscards(models.Model):
 
 
 class Processors(models.Model):
-    model_processors = models.CharField(db_column='Model_processors', primary_key=True, max_length=120)  # Field name made lowercase.
+    processors_id = models.AutoField(db_column='processors_id',  primary_key=True, blank=True)
+    model_processors = models.CharField(db_column='Model_processors', unique=True, max_length=120)  # Field name made lowercase.
     count_core = models.IntegerField(db_column='Count_core')  # Field name made lowercase.
     clock_rate = models.DecimalField(db_column='Clock_rate', max_digits=2, decimal_places=1, blank=True, null=True)  # Field name made lowercase.
 
@@ -66,7 +69,8 @@ class Processors(models.Model):
 
 
 class Rams(models.Model):
-    model_ram = models.CharField(db_column='Model_ram', primary_key=True, max_length=120)  # Field name made lowercase.
+    ram_id = models.AutoField(db_column='ram_id',  primary_key=True, blank=True)
+    model_ram = models.CharField(db_column='Model_ram', unique=True, max_length=120)  # Field name made lowercase.
     memory_type = models.CharField(db_column='Memory_type', max_length=20)  # Field name made lowercase.
     rate_memory = models.IntegerField(db_column='Rate_memory')  # Field name made lowercase.
 
@@ -79,8 +83,8 @@ class Rams(models.Model):
 
 
 class Software(models.Model):
-    # softwareid = models.AutoField(db_column='SoftwareID',   blank=True, null=True)  # Field name made lowercase.
-    name = models.CharField(db_column='Name',  primary_key=True, max_length=100)  # Field name made lowercase.
+    # softwareid = models.AutoField(db_column='SoftwareID',  primary_key=True, blank=True)  # Field name made lowercase.
+    name = models.CharField(db_column='Name', primary_key=True, max_length=100)  # Field name made lowercase.
     version = models.CharField(db_column='Version', max_length=50)  # Field name made lowercase.
     
 
@@ -94,7 +98,8 @@ class Software(models.Model):
 
 
 class Powersupplies(models.Model):
-    model_powersupplies = models.CharField(db_column='Model_PowerSupplies', primary_key=True, max_length=120)  # Field name made lowercase.
+    powersupplies_id = models.AutoField(db_column='powersupplies_id',  primary_key=True, blank=True)
+    model_powersupplies = models.CharField(db_column='Model_PowerSupplies', unique=True, max_length=120)  # Field name made lowercase.
     form_factor = models.CharField(db_column='Form_factor', max_length=20)  # Field name made lowercase.
     power_bp = models.IntegerField(db_column='Power_bp')  # Field name made lowercase.
 
@@ -126,7 +131,8 @@ class Employees(models.Model):
         db_table = 'Employees'
 
 class Harddrives(models.Model):
-    model_harddrives = models.CharField(db_column='Model_HardDrives', primary_key=True, max_length=120)  # Field name made lowercase.
+    harddrives_id = models.AutoField(db_column='harddrives_id',  primary_key=True, blank=True)
+    model_harddrives = models.CharField(db_column='Model_HardDrives', unique=True, max_length=120)  # Field name made lowercase.
     disk_type = models.CharField(db_column='Disk_type', max_length=30)  # Field name made lowercase.
     space_disk = models.IntegerField(db_column='Space_disk')  # Field name made lowercase.
     speed_disk = models.IntegerField(db_column='Speed_disk')  # Field name made lowercase.
@@ -171,14 +177,14 @@ class Computers(models.Model):
     ip_adress = models.CharField(db_column='IP_adress', max_length=19, blank=True, null=True)  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
     status = models.BooleanField(db_column='Status',  default = True)  # Field name made lowercase.
-    model_processors = models.ForeignKey(Processors, on_delete=models.CASCADE, db_column='Model_processors')  # Field name made lowercase.
-    model_motherboards = models.ForeignKey(Motherboards,  on_delete=models.CASCADE, db_column='Model_motherboards')  # Field name made lowercase.
-    model_ram = models.ForeignKey(Rams,  models.CASCADE, db_column='Model_ram')  # Field name made lowercase.
+    model_processors = models.ForeignKey(Processors, on_delete=models.CASCADE, db_column='processors_id')  # Field name made lowercase.
+    model_motherboards = models.ForeignKey(Motherboards,  on_delete=models.CASCADE, db_column='Motherboards_id')  # Field name made lowercase.
+    model_ram = models.ForeignKey(Rams,  models.CASCADE, db_column='ram_id')  # Field name made lowercase.
     quantity = models.IntegerField(db_column='Quantity')  # Field name made lowercase.
-    model_harddrives = models.ForeignKey(Harddrives, on_delete=models.CASCADE, db_column='Model_HardDrives')  # Field name made lowercase.
-    second_model_harddrives = models.ForeignKey(Harddrives, on_delete=models.CASCADE, blank=True, null=True, db_column='Second_Model_HardDrives', related_name='computers_second_model_harddrives_set')  # Field name made lowercase.
-    model_powersupplies = models.ForeignKey(Powersupplies, on_delete=models.CASCADE,  db_column='Model_PowerSupplies')  # Field name made lowercase.
-    model_graphicscards = models.ForeignKey(Graphicscards, on_delete=models.CASCADE, db_column='Model_GraphicsCards')  # Field name made lowercase.
+    model_harddrives = models.ForeignKey(Harddrives, on_delete=models.CASCADE, db_column='harddrives_id')  # Field name made lowercase.
+    second_model_harddrives = models.ForeignKey(Harddrives, on_delete=models.CASCADE, blank=True, null=True, db_column='Second_harddrives_id', related_name='computers_second_model_harddrives_set')  # Field name made lowercase.
+    model_powersupplies = models.ForeignKey(Powersupplies, on_delete=models.CASCADE,  db_column='powersupplies_id')  # Field name made lowercase.
+    model_graphicscards = models.ForeignKey(Graphicscards, on_delete=models.CASCADE, db_column='Graphicscards_id')  # Field name made lowercase.
 
     def __str__(self):
         return f'{self.serialnumber}'
@@ -188,9 +194,9 @@ class Computers(models.Model):
         db_table = 'Computers'
 
 class Computersoftware(models.Model):
-    serialnumber = models.OneToOneField(Computers, on_delete=models.CASCADE, db_column='SerialNumber', primary_key=True)  # Field name made lowercase. The composite primary key (SerialNumber, Name) found, that is not supported. The first column is selected.
-    name = models.ForeignKey(Software, on_delete=models.CASCADE, db_column='Name')  # Field name made lowercase.
-    installdate = models.DateField(db_column='InstallDate', blank=True, null=True)  # Field name made lowercase.
+    serialnumber = models.OneToOneField(Computers, on_delete=models.CASCADE, db_column='SerialNumber',  max_length=13, primary_key=True)  # Field name made lowercase. The composite primary key (SerialNumber, Name) found, that is not supported. The first column is selected.
+    name = models.ForeignKey(Software, on_delete=models.CASCADE, db_column='name')  # Field name made lowercase.
+    installdate = models.DateField(db_column='InstallDate')  # Field name made lowercase.
     licensekey = models.CharField(db_column='LicenseKey', max_length=50)  # Field name made lowercase.
     
     def __str__(self):
