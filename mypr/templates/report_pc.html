@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        margin-top: 20px;
+        width: 500px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var searchForm = document.getElementById("searchForm");
+        searchForm.addEventListener("submit", function (e) {
+          e.preventDefault(); // Предотвращаем стандартное действие отправки формы
+
+          var serialNumber = document.getElementById("searchInput").value;
+          var url = "{% url 'search_pc' %}"; // URL для обработки поиска на сервере
+
+          fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "X-CSRFToken": "{{ csrf_token }}", // Если вы используете CSRF-токены
+            },
+            body: "serial=" + encodeURIComponent(serialNumber),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Вставляем данные в соответствующие элементы HTML
+              document.getElementById("serialNumberOutput").textContent =
+                "Серийный номер: " + data.serial_number;
+              document.getElementById("inventoryNumberOutput").textContent =
+                "Инвентарный номер: " + data.inventory_number;
+              // Добавьте остальные поля, если они есть в ответе
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <form method="POST" action="{% url 'search_pc' %}" id="searchForm">
+        {% csrf_token %}
+        <div class="input-group">
+          <input
+            name="serial"
+            type="text"
+            class="form-control"
+            placeholder="Серийный номер"
+            maxlength="13"
+            id="searchInput"
+          />
+
+          <button
+            class="btn btn-outline-primary btn-sm"
+            type="submit"
+            href="#"
+            data-url="{% url 'report_pc' %}"
+          >
+            Найти
+          </button>
+          <button class="btn btn-outline-success btn-sm" type="submit">
+            Распечатать
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <p id="serialNumberOutput">Серийный номер:</p>
+    <p id="inventoryNumberOutput">Инвентарный номер:</p>
+    <!-- Добавьте остальные поля, если они есть в ответе -->
+  </body>
+</html>

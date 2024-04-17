@@ -194,7 +194,7 @@ class Computers(models.Model):
         db_table = 'Computers'
 
 class Computersoftware(models.Model):
-    serialnumber = models.OneToOneField(Computers, on_delete=models.CASCADE, db_column='SerialNumber',  max_length=13, primary_key=True)  # Field name made lowercase. The composite primary key (SerialNumber, Name) found, that is not supported. The first column is selected.
+    serialnumber = models.ForeignKey(Computers, on_delete=models.CASCADE, db_column='SerialNumber',  max_length=13)  # Field name made lowercase. The composite primary key (SerialNumber, Name) found, that is not supported. The first column is selected.
     name = models.ForeignKey(Software, on_delete=models.CASCADE, db_column='name')  # Field name made lowercase.
     installdate = models.DateField(db_column='InstallDate')  # Field name made lowercase.
     licensekey = models.CharField(db_column='LicenseKey', max_length=50)  # Field name made lowercase.
