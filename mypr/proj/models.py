@@ -173,7 +173,7 @@ class Computers(models.Model):
     serialnumber = models.CharField(db_column='SerialNumber', primary_key=True, max_length=13)  # Field name made lowercase.
     inventory_number = models.CharField(db_column='Inventory_number', max_length=10, unique=True)  # Field name made lowercase.
     model = models.CharField(db_column='Model', max_length=120)  # Field name made lowercase.
-    employeeid = models.ForeignKey(Employees, on_delete=models.CASCADE, db_column='EmployeeID')  # Field name made lowercase.
+    employeeid = models.ForeignKey(Employees, on_delete=models.CASCADE, db_column='EmployeeID', related_name='computers_set')  # Field name made lowercase.
     ip_adress = models.CharField(db_column='IP_adress', max_length=19, blank=True, null=True)  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
     status = models.BooleanField(db_column='Status',  default = True)  # Field name made lowercase.
@@ -214,7 +214,7 @@ class Monitors(models.Model):
     serialnumber = models.CharField(db_column='SerialNumber', primary_key=True, max_length=13)  # Field name made lowercase.
     inventory_number = models.CharField(db_column='Inventory_number',max_length=10, unique = True)  # Field name made lowercase.
     status = models.BooleanField(db_column='Status', default = True)  # Field name made lowercase.
-    employeeid = models.ForeignKey(Employees, on_delete=models.CASCADE, db_column='EmployeeID')  # Field name made lowercase.
+    employeeid = models.ForeignKey(Employees, on_delete=models.CASCADE, db_column='EmployeeID', related_name='monitors_set')  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
     screen = models.CharField(db_column='Screen', max_length=200)  # Field name made lowercase.
     connectors = models.CharField(db_column='Connectors', max_length=450)  # Field name made lowercase.
@@ -236,7 +236,7 @@ class Printers(models.Model):
     serialnumber = models.CharField(db_column='SerialNumber', primary_key=True, max_length=13)  # Field name made lowercase.
     inventory_number = models.CharField(db_column='Inventory_number',  max_length=10, unique=True)  # Field name made lowercase.
     status = models.BooleanField(db_column='Status', default = True)  # Field name made lowercase.
-    employeeid = models.ForeignKey(Employees, on_delete=models.CASCADE, db_column='EmployeeID')  # Field name made lowercase.
+    employeeid = models.ForeignKey(Employees, on_delete=models.CASCADE, db_column='EmployeeID', related_name='printers_set')  # Field name made lowercase.
     ip_adress = models.CharField(db_column='IP_adress', max_length=19, blank=True, null=True)  # Field name made lowercase.
     datу_use = models.DateField(db_column='Datу_use')  # Field name made lowercase.
     connectors = models.CharField(db_column='Connectors', max_length=450)  # Field name made lowercase.

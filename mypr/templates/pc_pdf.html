@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <style>
+    html,
+    body {
+      overflow-x: hclassden;
+      height: 100%; /* Ensure the body takes up the full height of the window */
+      margin: 0;
+    }
+
+    .sign {
+      display: flex;
+    }
+
+    .date {
+      display: column;
+      margin-right: 200px;
+    }
+    .date1 {
+      margin-left: 30px;
+    }
+    .signal {
+      display: column;
+      margin-right: 200px;
+    }
+    .signal1 {
+      margin-left: 40px;
+    }
+
+    .step {
+      margin-left: 40px;
+    }
+
+    .delitel {
+      line-height: 1.1;
+    }
+  </style>
+  <body>
+    <p>Отчет по №: {{serial_number}}</p>
+    <div class="delitel">
+      {% if serial_number%}
+      <b>
+        <p>Серийный номер: {{serial_number}}</p>
+        <p>Инвентарный номер: {{inventory_number}}</p>
+        <p>Модель: {{model}}</p>
+        <p>Сотрудник: {{employee_lastname}} {{employee_firstname}}</p>
+        <p>Должность: {{post}}</p>
+        <p>Номер отдела: {{department_name}}</p>
+        <p>Корпус: {{corpus}}</p>
+        <p>Кабинет: {{cabinet}}</p>
+        <p>Номер телефона: {{phone}}</p>
+        <p>IP адресс: {{ip_address}}</p>
+        <p>Дата ввода в эксплуатацию: {{date_of_entry|date:'d-m-Y' }}</p>
+        <p>Статус: {{status}}</p>
+        <p>Процессор: {{processor_model}}</p>
+        <p>Материнская плата: {{motherboard_model}}</p>
+        <p>Оперативная память: {{ram_model}}</p>
+        <p>Количество слотов: {{count_slots}}</p>
+        <p>Видеокарта: {{graphic_card_model}}</p>
+        <p>Первый диск: {{hard_disk_model}}</p>
+        <p>Второй диск: {{second_disk_model}}</p>
+        <p>Блок питания: {{power_supply_model}}</p>
+
+        <p>Программное обеспечение:</p></b
+      >
+      {% endif %} {% for software in software_list1 %}
+      <p class="step">Название: {{ software.name }}</p>
+      <p class="step">Ключ: {{ software.licensekey }}</p>
+      <p class="step">
+        Дата установки: {{ software.installdate|date:"d-m-Y" }}
+      </p>
+
+      {% endfor %}
+    </div>
+    <div class="sign">
+      <div class="date">
+        <p>____________</p>
+        <p class="date1">Дата</p>
+      </div>
+      <div class="signal">
+        <p>_________________</p>
+        <p class="signal1">Подпись</p>
+      </div>
+    </div>
+  </body>
+</html>
