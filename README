@@ -9,7 +9,12 @@ python manage.py makemigrations proj
 создание пользователя
 python manage.py createsuperuser
 
-pip install xhtml2pdf 
+pip install lxml
+pip install python-docx
+pip install docxtpl
+pip install docx-mailmerge
+
+.strftime('%d-%m-%Y')
 
 установка гита
 brew install git
@@ -24,27 +29,12 @@ git push -u origin main
 
 
 
-<script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var dropdownItems = document.querySelectorAll('.dropdown-item');
-        var contentDiv = document.getElementById('content');
-      
-        dropdownItems.forEach(function(item) {
-          item.addEventListener('click', function(e) {
-            e.preventDefault();
-            var url = this.getAttribute('data-url');
-            fetch(url)
-              .then(response => response.text())
-              .then(data => {
-                contentDiv.innerHTML = data;
-              })
-              .catch(error => {
-                console.error('Error:', error);
-              });
-          });
-        });
-      });
-      </script>
+'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_db',
+        'USER': 'django_user',
+        'PASSWORD': 'django_password',
+        'HOST': 'db',
+        'PORT': '3306',
 
 
 

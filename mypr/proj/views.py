@@ -9,7 +9,12 @@ from django.db.models import Prefetch
 from django.views.decorators.cache import cache_control
 from django.http import HttpResponse
 from django.template.loader import get_template
-from xhtml2pdf import pisa
+import io
+from docx import Document
+import os
+from django.conf import settings
+from mailmerge import MailMerge
+from docxtpl import DocxTemplate
 
 
 from .models import Computers, Computersoftware, Departments, Employees, Graphicscards, Incidenthistory, Monitors, Motherboards, Powersupplies, Printers, Processors, Rams, Software 
@@ -124,116 +129,138 @@ def search_pc(request):
 @login_required   
 def generate_pdf_printer(request):
     print(inf0)
-    template_path = 'report_printer.html'  # Путь к вашему шаблону
-    context = inf0  # Ваши данные для шаблона
+    
+    # Создаем объект Document
+    template_path = os.path.join(settings.BASE_DIR, 'templates', 'printer_word.docx')
+    # document = MailMerge(template_path)
 
-    # Создаем объект HttpResponse с заголовком, указывающим на то, что мы отправляем PDF
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report_printer_'+inf0.get("serial_number")+'.pdf"'
+    # Подставляем значения в шаблон
+    # document.merge(**inf1)
+    doc = DocxTemplate(template_path)
 
-    # Получаем шаблон и рендерим его с данными
-    template = get_template(template_path)
-    html = template.render(context)
+    # Подставляем значения в шаблон
+    context = inf0
+    doc.render(context)
 
-    # Создаем PDF файл
-    pisa_status = pisa.CreatePDF(
-       html, dest=response)
+    # Сохраняем документ в файловый буфер
+    buffer = io.BytesIO()
+    doc.save(buffer)
 
-    # Если PDF создан успешно, то возвращаем его, иначе возвращаем ошибку
-    if pisa_status.err:
-       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    # Возвращаем файл Word как ответ
+    # 
+    buffer.seek(0)
+    response = HttpResponse(buffer.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+    response['Content-Disposition'] = 'attachment; filename="report_printer_' + inf0.get("serial_number") + '.docx"'
     return response
 
 @login_required
 def generate_pdf_pc(request):
     print(inf0)
-    template_path = 'pc_pdf.html'  # Путь к вашему шаблону
-    context = inf0  # Ваши данные для шаблона
+    
+    # Создаем объект Document
+    template_path = os.path.join(settings.BASE_DIR, 'templates', 'pc_word.docx')
+    # document = MailMerge(template_path)
 
-    # Создаем объект HttpResponse с заголовком, указывающим на то, что мы отправляем PDF
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report_pc_'+inf0.get("serial_number")+'.pdf"'
+    # Подставляем значения в шаблон
+    # document.merge(**inf1)
+    doc = DocxTemplate(template_path)
 
-    # Получаем шаблон и рендерим его с данными
-    template = get_template(template_path)
-    html = template.render(context)
+    # Подставляем значения в шаблон
+    context = inf0
+    doc.render(context)
 
-    # Создаем PDF файл
-    pisa_status = pisa.CreatePDF(
-       html, dest=response, encoding="UTF-8")
+    # Сохраняем документ в файловый буфер
+    buffer = io.BytesIO()
+    doc.save(buffer)
 
-    # Если PDF создан успешно, то возвращаем его, иначе возвращаем ошибку
-    if pisa_status.err:
-       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    # Возвращаем файл Word как ответ
+    # 
+    buffer.seek(0)
+    response = HttpResponse(buffer.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+    response['Content-Disposition'] = 'attachment; filename="report_pc_' + inf0.get("serial_number") + '.docx"'
     return response
 
 @login_required
 def generate_pdf_office(request):
     print(employee_info)
-    template_path = 'report_office.html'  # Путь к вашему шаблону
-    context = {'employee_info': employee_info}  # Ваши данные для шаблона
+     # Путь к вашему шаблону
+    
+    # Создаем объект Document
+    template_path = os.path.join(settings.BASE_DIR, 'templates', 'office_word.docx')
+    # document = MailMerge(template_path)
 
-    # Создаем объект HttpResponse с заголовком, указывающим на то, что мы отправляем PDF
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report_office_'+office1+'.pdf"'
+    # Подставляем значения в шаблон
+    # document.merge(**inf1)
+    doc = DocxTemplate(template_path)
 
-    # Получаем шаблон и рендерим его с данными
-    template = get_template(template_path)
-    html = template.render(context)
+    # Подставляем значения в шаблон
+    context = {'employee_info': employee_info, 'employee_number': str(employee_info[0].get("cabinet"))}
+    doc.render(context)
 
-    # Создаем PDF файл
-    pisa_status = pisa.CreatePDF(
-       html, dest=response)
+    # Сохраняем документ в файловый буфер
+    buffer = io.BytesIO()
+    doc.save(buffer)
 
-    # Если PDF создан успешно, то возвращаем его, иначе возвращаем ошибку
-    if pisa_status.err:
-       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    # Возвращаем файл Word как ответ
+    # 
+    buffer.seek(0)
+    response = HttpResponse(buffer.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+    response['Content-Disposition'] = 'attachment; filename="report_office_' + str(employee_info[0].get("cabinet")) + '.docx"'
     return response
 
 @login_required
 def generate_pdf_department(request):
-    print(employee_info)
-    template_path = 'report_department.html'  # Путь к вашему шаблону
-    context =  {'employee_info': employee_info}  # Ваши данные для шаблона
+    print(employee_info[0].get("department_name"))
+     # Путь к вашему шаблону
+    
+    # Создаем объект Document
+    template_path = os.path.join(settings.BASE_DIR, 'templates', 'department_word.docx')
+    # document = MailMerge(template_path)
 
-    # Создаем объект HttpResponse с заголовком, указывающим на то, что мы отправляем PDF
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report_department_'+departmentid1+'.pdf"'
+    # Подставляем значения в шаблон
+    # document.merge(**inf1)
+    doc = DocxTemplate(template_path)
 
-    # Получаем шаблон и рендерим его с данными
-    template = get_template(template_path)
-    html = template.render(context)
+    # Подставляем значения в шаблон
+    context = {'employee_info': employee_info, 'employee_number': str(employee_info[0].get("department_name"))}
+    doc.render(context)
 
-    # Создаем PDF файл
-    pisa_status = pisa.CreatePDF(
-       html, dest=response)
+    # Сохраняем документ в файловый буфер
+    buffer = io.BytesIO()
+    doc.save(buffer)
 
-    # Если PDF создан успешно, то возвращаем его, иначе возвращаем ошибку
-    if pisa_status.err:
-       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    # Возвращаем файл Word как ответ
+    # 
+    buffer.seek(0)
+    response = HttpResponse(buffer.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+    response['Content-Disposition'] = 'attachment; filename="report_department_' + str(employee_info[0].get("department_name")).split()[0] + '.docx"'
     return response
 
 @login_required
 def generate_pdf_broken_pcs(request):
-    print(serial)
-    template_path = 'report_broken_pcs.html'  # Путь к вашему шаблону
-    context =  info  # Ваши данные для шаблона
+    print(info)
+    
+    # Создаем объект Document
+    template_path = os.path.join(settings.BASE_DIR, 'templates', 'incident_word.docx')
+    # document = MailMerge(template_path)
 
-    # Создаем объект HttpResponse с заголовком, указывающим на то, что мы отправляем PDF
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report_incident_'+serial+'.pdf"'
+    # Подставляем значения в шаблон
+    # document.merge(**inf1)
+    doc = DocxTemplate(template_path)
 
-    # Получаем шаблон и рендерим его с данными
-    template = get_template(template_path)
-    html = template.render(context)
+    # Подставляем значения в шаблон
+    context = info
+    doc.render(context)
 
-    # Создаем PDF файл
-    pisa_status = pisa.CreatePDF(
-       html, dest=response)
+    # Сохраняем документ в файловый буфер
+    buffer = io.BytesIO()
+    doc.save(buffer)
 
-    # Если PDF создан успешно, то возвращаем его, иначе возвращаем ошибку
-    if pisa_status.err:
-       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    # Возвращаем файл Word как ответ
+    # 
+    buffer.seek(0)
+    response = HttpResponse(buffer.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+    response['Content-Disposition'] = 'attachment; filename="report_pc_' + info.get("serialnumber") + '.docx"'
     return response
 
 

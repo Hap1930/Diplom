@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
   </head>
+  <style type="text/css">
+    @page {
+      size: A4;
+      margin: 1cm;
+    }
 
-  <style>
     html,
     body {
       overflow-x: hclassden;
       height: 100%; /* Ensure the body takes up the full height of the window */
       margin: 0;
+      font-family: "Times New Roman", Times, serif;
     }
 
     .sign {
@@ -38,9 +43,13 @@
     .delitel {
       line-height: 1.1;
     }
+
+    .centr {
+      margin-left: 250px;
+    }
   </style>
   <body>
-    <p>Отчет по №: {{serial_number}}</p>
+    <p class="centr">Отчет по №: {{serial_number}}</p>
     <div class="delitel">
       {% if serial_number%}
       <b>

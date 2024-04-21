@@ -68,6 +68,9 @@
       margin-top: 20px;
       color: red;
     }
+    .step {
+      margin-left: 40px;
+    }
 
     #searchForm {
       margin-left: 470px;
@@ -214,10 +217,11 @@
 
       <b><p>Серийный номер: {{ serialnumber }}</p></b>
       <b><p>Тип оборудования: {{ equipmenttype }}</p></b>
+      <b><p>Инциденты:</p></b>
 
       {% endif %} {% for s in inf %}
-      <b><p>Дата: {{ s.incidentdate|date:"d-m-Y H:i:s" }}</p></b>
-      <b><p>Комментарий: {{ s.description }}</p></b>
+      <p class="step">Дата: {{ s.incidentdate|date:"d-m-Y H:i:s" }}</p>
+      <p class="step">Комментарий: {{ s.description }}</p>
 
       {% endfor %}
     </div>
