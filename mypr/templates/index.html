@@ -59,6 +59,20 @@
       font-size: 36px; /* Increase the font size of the count text */
       font-weight: bold; /* Make the count text bold */
     }
+
+    .uchet {
+      font-size: 36px;
+      margin-left: 470px;
+    }
+
+    .date {
+      font-size: 26px;
+      margin-left: 450px;
+    }
+
+    #searchForm {
+      margin-left: 600px;
+    }
   </style>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -138,6 +152,35 @@
       crossorigin="anonymous"
     ></script>
     <div id="content">
+      <b><p class="uchet">Учет компьютерной техники</p></b>
+      <b
+        ><p class="date">
+          Следующая инвентаризация: {{sled_date|date:'d-m-Y' }}
+        </p></b
+      >
+      <form method="POST" action="{% url 'count_pc' %}" id="searchForm">
+        {% csrf_token %}
+        <div class="container">
+          <div class="input-group w-25">
+            <input
+              name="serial"
+              type="text"
+              class="form-control"
+              placeholder="Номер отдела"
+              maxlength="5"
+              id="searchInput"
+            />
+
+            <button
+              class="btn btn-outline-primary btn-sm"
+              type="submit"
+              href="#"
+            >
+              Найти
+            </button>
+          </div>
+        </div>
+      </form>
       <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col">
           <div class="card mt-4 h-100">

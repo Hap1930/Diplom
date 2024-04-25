@@ -1,3 +1,5 @@
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 from multiprocessing import context
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render 
@@ -17,7 +19,7 @@ from mailmerge import MailMerge
 from docxtpl import DocxTemplate
 
 
-from .models import Computers, Computersoftware, Departments, Employees, Graphicscards, Incidenthistory, Monitors, Motherboards, Powersupplies, Printers, Processors, Rams, Software 
+from .models import Computers, Computersoftware, Departments, Employees, Graphicscards, Incidenthistory, Monitors, Motherboards, Powersupplies, Printers, Processors, Rams, SledDate, Software 
 
 
 
@@ -28,7 +30,55 @@ def view_go(request):
     monitor_count = Monitors.objects.count()
     printer_count = Printers.objects.count()
     employ_count= Employees.objects.count()
-    return render(request, "index.html", {'pc_count': pc_count, 'monitor_count': monitor_count,'employ_count':employ_count, 'printer_count': printer_count})
+    
+    global sled_date_obj
+    sled_date_obj = SledDate.objects.get(id=1)
+
+    # Текущая дата
+    current_date = datetime.now().date()
+    
+    # Если текущая дата больше или равна sled_date, увеличиваем sled_date на полгода
+    if current_date > sled_date_obj.date:
+        sled_date_obj.date += relativedelta(months=+6)
+        sled_date_obj.save()
+    return render(request, "index.html", {'pc_count': pc_count, 'monitor_count': monitor_count,'employ_count':employ_count, 'printer_count': printer_count, 'sled_date':sled_date_obj.date})
+
+
+@login_required
+def count_pc(request):
+    if request.method == 'POST':
+        department = request.POST["serial"]
+        print(department)
+
+        try:
+            
+
+            employees = Employees.objects.filter(departmentid=department).prefetch_related(
+                Prefetch('computers_set', queryset=Computers.objects.all()),
+                Prefetch('monitors_set', queryset=Monitors.objects.all()),
+                Prefetch('printers_set', queryset=Printers.objects.all())
+            ).all()
+            
+            if employees:
+                
+                pc_count = sum(employee.computers_set.count() for employee in employees)
+                monitor_count = sum(employee.monitors_set.count() for employee in employees)
+                employ_count = employees.count()
+                printer_count = sum(employee.printers_set.count() for employee in employees)
+                
+                print(pc_count,monitor_count,employ_count,printer_count)
+
+                
+                return render(request, "index.html", {'pc_count': pc_count, 'monitor_count': monitor_count,'employ_count':employ_count, 'printer_count': printer_count, 'sled_date':sled_date_obj.date})
+        except:
+            return redirect('main_page')
+        else:
+            return redirect('main_page')
+    else:
+        return redirect('main_page')
+    
+
+
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def user_login(request):
@@ -45,6 +95,7 @@ def user_login(request):
         
     return render(request, "login.html")
 
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def user_logout(request):
     logout(request)
@@ -56,10 +107,6 @@ def redirect_to_admin(request):
 
 @login_required
 def redirect_to_main(request):
-    pc_count = Computers.objects.count()
-    monitor_count = Monitors.objects.count()
-    printer_count = Printers.objects.count()
-    print(pc_count)
     return redirect('main_page')
 
 @login_required

@@ -1,6 +1,9 @@
 
 from django.db import models
 
+class SledDate(models.Model):
+    date = models.DateField()
+
 
 class Departments(models.Model):
     departmentid = models.IntegerField(db_column='DepartmentID', primary_key=True, blank=True)  # Field name made lowercase.

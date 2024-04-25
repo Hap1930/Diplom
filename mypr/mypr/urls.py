@@ -17,11 +17,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-from proj.views import  generate_pdf_broken_pcs, generate_pdf_department, generate_pdf_office, generate_pdf_pc, generate_pdf_printer, redirect_to_main, report_broken_pcs, report_department, report_office, report_pc, report_printer, search_broken_pcs, search_department, search_office, search_pc, search_printer, view_go, user_login, user_logout, redirect_to_admin
+from proj.views import  count_pc, generate_pdf_broken_pcs, generate_pdf_department, generate_pdf_office, generate_pdf_pc, generate_pdf_printer, redirect_to_main, report_broken_pcs, report_department, report_office, report_pc, report_printer, search_broken_pcs, search_department, search_office, search_pc, search_printer, view_go, user_login, user_logout, redirect_to_admin
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", view_go, name="main_page"),
+    path("count/", count_pc, name="count_pc"),
     path("login/", user_login, name="login"),
     path("redirect-to-admin/", redirect_to_admin, name="redirect_to_admin"),
     path("logout/", user_logout, name="logout"),
