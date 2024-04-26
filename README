@@ -38,3 +38,64 @@ git push -u origin main
 
 
 
+
+docker-compose build
+dependency cycle detected: web
+
+phpmyadmin:
+        image: phpmyadmin
+        ports:
+          - 8082:80
+        restart: always
+        environment:
+          - PMA_ARBITRARY=1
+
+
+          version: "3"
+
+          services:
+            phpmyadmin:
+              image: phpmyadmin
+              ports:
+                - 8082:80
+              restart: always
+              environment:
+                - PMA_ARBITRARY=1
+          
+            db:
+              image: mysql
+              command: --default-authentication-plugin=caching_sha2_password --pid-file=/var/run/mysqld/mysqld.pid
+              restart: always
+              ports:
+                - 5432:5432
+              environment:
+                MYSQL_ROOT_PASSWORD: 1
+                MYSQL_DATABASE: django_db
+                MYSQL_USER: django_user
+                MYSQL_PASSWORD: django_password
+          
+            web:
+              build: 
+                context: ./
+                dockerfile: Dockerfile
+              volumes:
+                - ./:/usr/src/app
+              depends_on:
+                - db
+              ports:
+                - "8000:8000"
+          
+          
+            nginx:
+              build: 
+                context: ./docker/nginx
+                dockerfile: Dockerfile
+              depends_on:
+                - web
+                - db
+              ports:
+                - "80:80"
+              volumes:
+                - ./static/:/static
+
+exec  gunicorn mypr.wsgi:application  -b 0.0.0.0:8000 --reload
