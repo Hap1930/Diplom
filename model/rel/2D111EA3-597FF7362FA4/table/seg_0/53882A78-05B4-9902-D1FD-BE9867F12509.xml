@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="53882A78-05B4-9902-D1FD-BE9867F12509" name="`Software`">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>C6D9472E-775C-5BE0-06A3-F8CAF2B09372</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="`Name`" id="AB6DAF6F-C70E-3931-5551-3D8A1ED74790">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>E5674E23-7036-97BD-563D-F54E14564B3B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>076F847B-02C6-D74B-565E-7DC95A1EBDAB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="`Version`" id="F079148C-ADA7-1463-6417-CB28B5BF3CE3">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>8A3423BC-9689-8284-6901-C6A7F0CCD1AC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F166F047-C809-6CB5-D9E2-B8CFBD2F6178</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5527A13B-ED37-6818-D179-A7FA8A4C4A79" name="`Software`_PK">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>BDE10AAC-C486-2326-1320-E00C2ABAE3B1</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB6DAF6F-C70E-3931-5551-3D8A1ED74790"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

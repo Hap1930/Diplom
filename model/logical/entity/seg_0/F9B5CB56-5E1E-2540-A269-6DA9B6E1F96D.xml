@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F9B5CB56-5E1E-2540-A269-6DA9B6E1F96D" name="`HardDrives`">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>6A3CB52D-8695-CF50-62AF-F718BDBEE41E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="`Model HardDrives`" id="C45B5D19-3779-8D31-06A9-3C7C9F06F2AE">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>5159BC70-C103-C120-D7F6-458A9B29D17A</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5A24E9CE-E086-66C6-33C6-F16178D76625</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Disk type`" id="D3041A15-6E87-015D-CF9E-DA9FDA2832B0">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>D044BA73-A209-9CF2-AFFF-E0204E0CB933</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1D7CE7E4-0F64-0C35-D8C8-F79FFB2244EB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Space disk`" id="37930AB8-E90F-7939-2337-A2F9ABD968CF">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>6DAB918C-642F-20C4-41EB-8605FE599A49</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>68253969-CEDA-28DA-A8AF-9416F2F029B5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Speed disk`" id="C698254D-1681-3308-AF27-7DACE64CB056">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>C1E9E529-9375-A20B-E833-087AC1B2B17F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>68253969-CEDA-28DA-A8AF-9416F2F029B5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1A836BEC-D787-851D-8412-6BC136F37F53" name="`HardDrives` PK">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>11C34715-3192-A5B4-8589-327A148260AE</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C45B5D19-3779-8D31-06A9-3C7C9F06F2AE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

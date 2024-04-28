@@ -1,0 +1,184 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="`Computers`" directorySegmentName="seg_0" id="9FF198C7-E501-DCAB-50D0-555FC690D164">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="KEY5" id="09CF22DB-22F5-BAF7-2B04-EDBFDF8A1E0A">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Employees`_`EmployeeID`" id="12F458E6-4FE4-639A-6187-B3737E785016">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`PowerSupplies`_`Model_PowerSupplies`" id="13FA4ED9-7CFA-86A9-6670-3E38F66465A0">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KEY6" id="159FA782-E059-9790-3A9E-987A6AA0665D">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`HardDrives`_`Model_HardDrives`1" id="23424CFA-1447-36A4-9238-2627D1012890">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Status`" id="2591339E-0C1F-3E5A-A149-2FECD6596BFE">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KEY" id="2D01F22B-1205-3596-E8DE-5D4348B6CF29">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Inventory_number`" id="30A85240-1668-AB55-3831-63B303693A1A">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KEY3" id="3E96090F-2803-0AED-6C51-6323FD99DFC7">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`HardDrives`_`Model_HardDrives`" id="55E48609-7FA7-3FA4-7633-9F4E0E76E4D0">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Processors`_`Model_processors`" id="649FB078-0918-816C-AA94-37D36D9595B9">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KEY7" id="96927E5B-CD42-0EE9-F4C1-DE71DA3D9911">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KEY2" id="9A7808EA-BB9C-036E-D905-B78AB9058CF7">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KEY4" id="AE386421-87BE-3BB3-A8DF-5BC2D2CA694A">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Quantity`" id="B819C533-6D09-FEE8-FBAC-DC7D3A3BCA70">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Datу_use`" id="BAB5C275-1FB4-50B0-BE61-474E1F56AC66">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`SerialNumber`" id="C2D52C5E-D5B8-9510-7896-74BDB4E6FE69">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`GraphicsCards`_`Model_GraphicsCards`" id="C6CD7368-CA2F-57B8-5261-A3F463400BE6">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Motherboards`_`Model_motherboards`" id="CCF8DA1D-442F-5987-0422-8C3B46AAFDB8">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`RAMs`_`Model_ram`" id="E58DC0C8-6A7C-99C8-D935-A2153AB4C365">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UNIQUE" id="F091A4C1-AB7C-F549-72B2-9A1F2475C132">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`IP_adress`" id="F1DB4D90-8344-6A44-D915-263812FE416B">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<defaultValue>NULL</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="KEY1" id="F350E26E-4B9D-47BD-1D94-AA0A3118E53B">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Model`" id="FACCD67E-2760-FF37-7B3A-9FBDE7E75D67">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`HardDrives`_FK" id="0A29F947-F4BF-0338-EF79-158A7FCB6E34">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`Processors`_FK" id="5F6EA058-E0D3-44CC-F684-E1CEC16F1922">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`HardDrives`_FKv1" id="6844AEDA-976C-4B06-5BF1-31B58F3904A9">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`RAMs`_FK" id="9EB3DDA7-699C-54BF-42D9-DC390184C517">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`GraphicsCards`_FK" id="C959B82C-2C2D-B56F-CD59-D34DF6117596">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`PowerSupplies`_FK" id="E1352C4F-3EA1-91B5-E9FB-411C3D35DC48">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`Employees`_FK" id="E86300DC-409F-FCC7-8225-B33FB012D1FE">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="`Computers`_`Motherboards`_FK" id="F7A3F477-10E7-4E39-F139-6691BA6DB61D">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="`Computers`_PK" id="3DE2BFFE-672E-DD33-92FC-FB8A69DC698D">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

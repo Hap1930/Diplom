@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="`Motherboards`" directorySegmentName="seg_0" id="70DF75BF-814C-05A4-E68A-AF9AEA5922F0">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="`Motherboard_power`" id="15BF87CB-2003-21C1-8082-71E743B7B4DC">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Form_factor`" id="2EFE4E7D-9818-4485-DAC2-8A18ED6910E6">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Chipset`" id="3E27A8E1-6507-558E-8982-B853E85F459F">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Max_memory`" id="3F9669EF-4A2C-3AF0-F746-2ACCF23F5DAE">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Model_motherboards`" id="50635270-2CFE-3CDD-5CB4-51C7A7F79C4B">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Memory_type`" id="607153F5-D505-1CC2-788F-833868EE391D">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Rate_memory`" id="B0E25AD8-864A-4FA7-8813-986303983DB6">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Connectors`" id="CAF0F9D4-1522-7733-DEBA-314CA11AA7D3">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Socket`" id="CEDDCB44-B8BE-D9D1-91A2-F0B3A5E3F4B2">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="`Count_slots`" id="E5CAF3AF-622E-764C-2C14-F3F4B550EE89">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="`Motherboards`_PK" id="1C83564B-4EE6-DDA8-FADA-B0FB8846D310">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

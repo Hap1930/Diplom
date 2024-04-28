@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="04123F77-E155-B849-5CCD-0C7BBC7F7A0D" name="`ComputerSoftware`">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>158DDA5E-9C47-A7CF-DC61-9041CE7A506E</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="`Computers`_`SerialNumber`" id="AD4DC1DD-8353-9921-C021-9E61FD729BE8">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>304A375D-00DB-7949-0419-888465BC93CB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>FE9A354A-D059-5177-9D1F-6798287DC24E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="16B014AC-44DC-CC45-BEF8-3ACF98A31C17" referredColumn="C2D52C5E-D5B8-9510-7896-74BDB4E6FE69"/>
+</associations>
+</Column>
+<Column name="`InstallDate`" id="80DAAF47-BEC8-4B1E-B348-E31CAE0BF2A4">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>56723197-4B68-E0DE-80EA-E2139BD17426</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>CDA82804-B143-B29D-B1F8-BD73D317FBFC</domain>
+<defaultValue>NULL</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="`LicenseKey`" id="01A6270E-0547-4717-C2CC-80175FA60CCC">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>947DBCC4-9978-8777-0A3D-C94AC2B08FD8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F166F047-C809-6CB5-D9E2-B8CFBD2F6178</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="`Software`_`Name`" id="4F58C4BC-DB58-1C6E-C3DA-177D01E2B59D">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>00CA3674-0F01-CB3F-7FA8-DB42CEF465F2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>076F847B-02C6-D74B-565E-7DC95A1EBDAB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3900268E-A48C-C28D-AFB2-EEBCACB8B418" referredColumn="AB6DAF6F-C70E-3931-5551-3D8A1ED74790"/>
+</associations>
+</Column>
+<Column name="UNIQUE" id="FD6A98D0-34AF-1E56-FCF9-99C168F147EC">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>B62BD269-EEBB-D6F6-B9EA-B0B4A0F84113</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="KEY" id="E1C4943C-011A-AD0D-0FBA-33405E2F30E2">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>9D39BB3C-57B7-1D02-61DB-B485D2C96981</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EDB97090-A743-3BEC-5E82-063117644F22" name="`ComputerSoftware`_PK">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>90086C4F-E34A-D5EE-ED4B-C261CD736108</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD4DC1DD-8353-9921-C021-9E61FD729BE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="34EE9EEC-0E4A-C368-9EF3-2D5FB77E46AF" name="`ComputerSoftware`_`Software`_FK">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F58C4BC-DB58-1C6E-C3DA-177D01E2B59D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A8C882C-4B0B-7265-D0F6-2DCEB12A8F0E" name="`ComputerSoftware`_`Computers`_FK">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD4DC1DD-8353-9921-C021-9E61FD729BE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

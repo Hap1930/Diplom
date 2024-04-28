@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="`Computers_Second_Model_HardDri_caee9421_fk_HardDrive`" directorySegmentName="seg_0" id="DF2353CA-D278-D026-6B11-5C285D628AEC">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>DA4EA862-7571-0C2E-5074-ACAB1B9A75B2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<sourcePk>1A836BEC-D787-851D-8412-6BC136F37F53</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F9B5CB56-5E1E-2540-A269-6DA9B6E1F96D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8AEACE45-6A46-7365-CBC7-680F963CD9D5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

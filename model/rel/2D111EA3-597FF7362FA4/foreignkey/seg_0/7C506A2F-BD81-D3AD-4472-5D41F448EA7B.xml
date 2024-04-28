@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7C506A2F-BD81-D3AD-4472-5D41F448EA7B" containerWithKeyObject="9FF198C7-E501-DCAB-50D0-555FC690D164" localFKIndex="5F6EA058-E0D3-44CC-F684-E1CEC16F1922" name="`Computers`_`Processors`_FK">
+<sourceDDLFile>structure.sql</sourceDDLFile>
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:35:10 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<importedID>BC8159D6-3A2F-E5E4-38ED-559E7C95BC3C</importedID>
+<referredTableLongName>`Processors`</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>67246BE7-E23F-0C8C-8E24-78420A5D0CD0</referredTableID>
+<keyObject>6BF0A91B-1CDE-D142-81B9-DEB1CCE95B42</keyObject>
+<referredKeyID>6BF0A91B-1CDE-D142-81B9-DEB1CCE95B42</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>`Model_processors`</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

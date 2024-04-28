@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="`Computers_Model_processors_d5e500d0_fk_Processor`" directorySegmentName="seg_0" id="4DB00C33-F900-1B64-17CD-1FB7A322D57B">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>7C506A2F-BD81-D3AD-4472-5D41F448EA7B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<sourcePk>A6351C27-4C59-783A-0B8B-8995B151ED87</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E50E91D2-C5F3-900C-BB59-73DB882F23F2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8AEACE45-6A46-7365-CBC7-680F963CD9D5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

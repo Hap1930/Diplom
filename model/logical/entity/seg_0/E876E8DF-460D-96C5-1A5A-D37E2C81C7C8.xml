@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E876E8DF-460D-96C5-1A5A-D37E2C81C7C8" name="`Motherboards`">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>70DF75BF-814C-05A4-E68A-AF9AEA5922F0</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="`Model motherboards`" id="A8B00606-11CB-6BBC-F607-9CEF73687FAC">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>50635270-2CFE-3CDD-5CB4-51C7A7F79C4B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5A24E9CE-E086-66C6-33C6-F16178D76625</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Chipset`" id="C7298E08-DE4B-B428-7AAA-2B6E8602C12C">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>3E27A8E1-6507-558E-8982-B853E85F459F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>1D7CE7E4-0F64-0C35-D8C8-F79FFB2244EB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Form factor`" id="6BE45473-6A21-6F3D-25D8-92ADCFCE517A">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>2EFE4E7D-9818-4485-DAC2-8A18ED6910E6</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9A14E57B-FF3C-27E2-3C7B-681A63C0985D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Socket`" id="2DC3134D-7FBD-8D74-6457-EA35B3C029F1">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>CEDDCB44-B8BE-D9D1-91A2-F0B3A5E3F4B2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9A14E57B-FF3C-27E2-3C7B-681A63C0985D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Memory type`" id="19FFB201-3BC8-0E34-E090-25CC0C889B2F">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>607153F5-D505-1CC2-788F-833868EE391D</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9A14E57B-FF3C-27E2-3C7B-681A63C0985D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Count slots`" id="058DC6AA-C735-EEDD-4D9D-4BE27ED6D00C">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>E5CAF3AF-622E-764C-2C14-F3F4B550EE89</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>68253969-CEDA-28DA-A8AF-9416F2F029B5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Max memory`" id="FB4D2B7B-66F2-9B93-2B65-BD45107562FC">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>3F9669EF-4A2C-3AF0-F746-2ACCF23F5DAE</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>68253969-CEDA-28DA-A8AF-9416F2F029B5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Rate memory`" id="74944263-B033-D473-C899-6D730082D01D">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>B0E25AD8-864A-4FA7-8813-986303983DB6</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>68253969-CEDA-28DA-A8AF-9416F2F029B5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Motherboard power`" id="902A7AB3-CDEE-539A-8E68-DDB7EA24B172">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>15BF87CB-2003-21C1-8082-71E743B7B4DC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9A14E57B-FF3C-27E2-3C7B-681A63C0985D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="`Connectors`" id="D76A88CB-8A3E-700F-0233-4EBC96733E3C">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>CAF0F9D4-1522-7733-DEBA-314CA11AA7D3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9D31EB99-A33D-51A3-405E-993CE1A729DF</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D64519CC-C809-A47D-A72B-2C70C3218433" name="`Motherboards` PK">
+<createdBy>a1930</createdBy>
+<createdTime>2024-03-31 06:37:40 UTC</createdTime>
+<generatorID>1C83564B-4EE6-DDA8-FADA-B0FB8846D310</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="2D111EA3-5C32-F837-1EF9-597FF7362FA4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A8B00606-11CB-6BBC-F607-9CEF73687FAC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
