@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report_printer</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+      height: 100%; /* Ensure the body takes up the full height of the window */
+      margin: 0;
+    }
+
+    .card {
+      width: 330px; /* Adjust this value as needed */
+      margin: auto; /* Center the card horizontally */
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Align content to the bottom */
+      align-items: center;
+      height: 100%; /* Ensure the card body takes up the full height of the card */
+    }
+
+    .card-img-top {
+      height: 250px;
+      width: 300px;
+      object-fit: contain;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card-title {
+      font-size: 24px; /* Increase the font size of the card titles */
+      margin-bottom: 10px; /* Add some space between the title and the count text */
+    }
+
+    .card-text {
+      font-size: 36px; /* Increase the font size of the count text */
+      font-weight: bold; /* Make the count text bold */
+    }
+    .container {
+      margin-top: 20px;
+      width: 500px;
+    }
+
+    #searchForm {
+      margin-left: 470px;
+    }
+
+    #left {
+      margin-top: 30px;
+      margin-left: 480px;
+      line-height: 1.1;
+    }
+
+    #grip {
+      display: flex;
+    }
+
+    #knopka {
+      margin-left: 355px;
+      margin-top: 17px;
+    }
+
+    #problem {
+      margin-left: 580px;
+      margin-top: 20px;
+      color: red;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="btn" href="{% url 'redirect_to_admin' %}"
+          >Режим администратора</a
+        >
+        <a class="btn" href="{% url 'redirect_to_main' %}">Основное окно</a>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Список отчетов
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="{% url 'report_pc' %}"
+                  >Отчет по ПК</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'report_printer' %}"
+                  >Отчет по принтеру</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'report_department' %}"
+                  >Отчет по отделу</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'report_office' %}"
+                  >Отчет по кабинету</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'report_broken_pcs' %}"
+                  >Отчет по инцидентам</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <h3
+              style="
+                color: white;
+                font-size: 18px;
+                text-transform: capitalize;
+                margin-right: 20px;
+                margin-top: 8px;
+              "
+            >
+              {{request.user}}
+            </h3>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-success" href="{% url 'logout' %}">
+              Выход
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <div id="grip">
+      <form method="POST" action="{% url 'search_printer' %}" id="searchForm">
+        <div class="container">
+          {% csrf_token %}
+          <div class="input-group">
+            <input
+              name="serial"
+              type="text"
+              class="form-control"
+              placeholder="Серийный номер"
+              maxlength="13"
+              id="searchInput"
+            />
+
+            <button
+              class="btn btn-outline-primary btn-sm"
+              type="submit"
+              href="#"
+            >
+              Найти
+            </button>
+          </div>
+        </div>
+      </form>
+      {% if serial_number%}
+      <form method="POST" action="{% url 'generate_pdf_printer' %}">
+        {% csrf_token %}
+        <button
+          id="knopka"
+          class="btn btn-outline-success btn-sm h-75"
+          type="submit"
+          target="_blank"
+        >
+          Распечатать
+        </button>
+      </form>
+      {% endif %}
+    </div>
+    <b><p id="problem">{{problem}}</p></b>
+    {% if serial_number%}
+    <div id="left">
+      <b>
+        <p>Серийный номер: {{serial_number}}</p>
+        <p>Инвентарный номер: {{inventory_number}}</p>
+        <p>Модель: {{model}}</p>
+        <p>Сотрудник: {{employee_lastname}} {{employee_firstname}}</p>
+        <p>Должность: {{post}}</p>
+        <p>Номер отдела: {{department_name}}</p>
+        <p>Корпус: {{corpus}}</p>
+        <p>Кабинет: {{cabinet}}</p>
+        <p>Номер телефона: {{phone}}</p>
+        <p>IP адресс: {{ip_address}}</p>
+        <p>Дата ввода в эксплуатацию: {{date_of_entry|date:"d-m-Y" }}</p>
+        <p>Статус: {{status}}</p>
+      </b>
+    </div>
+    {% endif %}
+  </body>
+</html>
